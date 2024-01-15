@@ -32,5 +32,12 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserType userType;
 
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public BigDecimal getBalance() {
+        return balance;
+    }
 
 }
