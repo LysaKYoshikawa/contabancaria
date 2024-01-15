@@ -1,2 +1,6 @@
-package com.yoshikawa.contabancaria.DTOs;public record TransactionDTO() {
+package com.yoshikawa.contabancaria.DTOs;
+
+import java.math.BigDecimal;
+
+public record TransactionDTO(BigDecimal value, Long senderId, Long receiverId) {
 }
