@@ -32,12 +32,18 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserType userType;
 
+    public String getEmail() {return email;}
+
     public UserType getUserType() {
         return userType;
     }
 
     public BigDecimal getBalance() {
         return balance;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
     }
 
 }
