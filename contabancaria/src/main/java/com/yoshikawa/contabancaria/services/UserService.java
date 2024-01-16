@@ -1,5 +1,6 @@
 package com.yoshikawa.contabancaria.services;
 
+import com.yoshikawa.contabancaria.DTOs.UserDTO;
 import com.yoshikawa.contabancaria.domain.user.User;
 import com.yoshikawa.contabancaria.domain.user.UserType;
 import com.yoshikawa.contabancaria.repositories.UserRepository;
@@ -27,6 +28,12 @@ public class UserService {
 
     public User findUserById(Long id) throws Exception {
         return this.repository.findUserById(id).orElseThrow(() -> new Exception("Usuario não cadastrado"));
+    }
+
+    public User createUser(UserDTO data){
+        User newUser = new User(data);
+        this.saveUser(newUser);
+        return newUser;
     }
 
     public void saveUser(User user){

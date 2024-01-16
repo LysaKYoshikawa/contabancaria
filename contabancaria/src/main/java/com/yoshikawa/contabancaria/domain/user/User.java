@@ -1,6 +1,7 @@
 package com.yoshikawa.contabancaria.domain.user;
 
 
+import com.yoshikawa.contabancaria.DTOs.UserDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -23,6 +24,7 @@ public class User {
     private Long id;
     private String firstName;
     private String lastName;
+    private String address;
     @Column(unique = true)
     private String document;
     @Column(unique = true)
@@ -44,6 +46,17 @@ public class User {
 
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
+    }
+
+    public User(UserDTO data){
+        this.firstName = data.firstName();
+        this.lastName = data.lastName();
+        this.address = data.address();
+        this.document = data.document();
+        this.email = data.email();
+        this.balance = data.balance();
+        this.userType = data.userType();
+        this.password = data.password();
     }
 
 }
