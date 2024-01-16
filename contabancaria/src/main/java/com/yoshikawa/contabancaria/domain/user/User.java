@@ -2,10 +2,12 @@ package com.yoshikawa.contabancaria.domain.user;
 
 
 import com.yoshikawa.contabancaria.DTOs.UserDTO;
+import com.yoshikawa.contabancaria.domain.account.Account;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity(name="users")
 @Table(name="users")
@@ -21,40 +23,33 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
-    private String lastName;
+
+    @Column(unique = true)
     private String address;
     @Column(unique = true)
     private String document;
     @Column(unique = true)
     private String email;
     private String password;
-    private BigDecimal balance;
-    @Enumerated(EnumType.STRING)
-    private UserType userType;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Account> accounts = new ArrayList<>();
+
 
     public String getEmail() {return email;}
 
-    public UserType getUserType() {
-        return userType;
-    }
 
-    public BigDecimal getBalance() {
-        return balance;
-    }
-
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
-    }
 
     public User(UserDTO data){
         this.firstName = data.firstName();
-        this.lastName = data.lastName();
+
         this.address = data.address();
         this.document = data.document();
         this.email = data.email();
-        this.balance = data.balance();
-        this.userType = data.userType();
+
         this.password = data.password();
     }
+
+
 
 }

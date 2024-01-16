@@ -1,5 +1,6 @@
 package com.yoshikawa.contabancaria.domain.transaction;
 
+import com.yoshikawa.contabancaria.domain.account.Account;
 import com.yoshikawa.contabancaria.domain.user.User;
 import jakarta.persistence.*;
 import lombok.*;
@@ -22,10 +23,10 @@ public class Transaction {
     private BigDecimal amount;
     @ManyToOne
     @JoinColumn(name="sender_id")
-    private User sender;
+    private Account sender;
     @ManyToOne
     @JoinColumn(name="received_id")
-    private User receiver;
+    private Account receiver;
 
     private LocalDateTime timestamp;
 
@@ -33,11 +34,11 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public void setSender(User sender) {
+    public void setSender(Account sender) {
         this.sender = sender;
     }
 
-    public void setReceiver(User receiver) {
+    public void setReceiver(Account receiver) {
         this.receiver = receiver;
     }
 
