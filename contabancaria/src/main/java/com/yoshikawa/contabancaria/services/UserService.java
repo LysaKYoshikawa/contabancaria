@@ -18,16 +18,7 @@ public class UserService {
     @Autowired
     private UserRepository repository;
 
-    public void validadeTransaction(Account sender, BigDecimal amount) throws Exception{
-        if(sender.getStatusType() == StatusType.INACTIVE){
-            throw  new Exception("Status da conta Inativa");
-        }
 
-        if(sender.getBalance().compareTo(amount) < 0){
-            throw  new Exception("Usuario não tem saldo");
-        }
-
-    }
 
     public User findUserById(Long id) throws Exception {
         return this.repository.findUserById(id).orElseThrow(() -> new Exception("Usuario não cadastrado"));
@@ -38,10 +29,6 @@ public class UserService {
         this.saveUser(newUser);
         return newUser;
     }
-
-
-
-
 
     public List<User> getListUsers(){
         return this.repository.findAll();
