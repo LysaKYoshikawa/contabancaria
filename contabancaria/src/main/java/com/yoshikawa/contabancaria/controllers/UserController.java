@@ -6,18 +6,26 @@ import com.yoshikawa.contabancaria.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-@RestController("/usuario")
+import java.util.List;
+
+@RestController()
+@RequestMapping("/usuario")
 public class UserController {
 
     @Autowired
     private UserService userService;
     @PostMapping
-    public ResponseEntity<User> createUser(UserDTO user){
+    public ResponseEntity<User> createUser(@RequestBody UserDTO user){
         User newUser = userService.createUser(user);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
 
+    }
+
+    @GetMapping
+    public ResponseEntity<List<User>> getListUsers(){
+        List<User> users = this.userService.getListUsers();
+        return new ResponseEntity<>(users, HttpStatus.OK);
     }
 }
