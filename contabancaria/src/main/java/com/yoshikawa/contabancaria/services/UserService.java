@@ -2,7 +2,7 @@ package com.yoshikawa.contabancaria.services;
 
 import com.yoshikawa.contabancaria.DTOs.UserDTO;
 import com.yoshikawa.contabancaria.domain.user.User;
-import com.yoshikawa.contabancaria.domain.user.UserType;
+import com.yoshikawa.contabancaria.domain.user.StatusType;
 import com.yoshikawa.contabancaria.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,12 +17,12 @@ public class UserService {
     private UserRepository repository;
 
     public void validadeTransaction(User sender, BigDecimal amount) throws Exception{
-        if(sender.getUserType() == UserType.MERCHANT){
-            throw  new Exception("Usuario de de conta Inativa");
+        if(sender.getStatusType() == StatusType.INACTIVE){
+            throw  new Exception("Não autorizado fazer transferencia conta Inativa.");
         }
 
         if(sender.getBalance().compareTo(amount) < 0){
-            throw  new Exception("Usuario não tem saldo");
+            throw  new Exception("Conta não tem saldo o suficiente para essa transação!");
         }
 
     }

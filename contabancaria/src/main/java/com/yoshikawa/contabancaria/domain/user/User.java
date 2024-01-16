@@ -4,6 +4,7 @@ package com.yoshikawa.contabancaria.domain.user;
 import com.yoshikawa.contabancaria.DTOs.UserDTO;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.usertype.UserType;
 
 import java.math.BigDecimal;
 
@@ -21,7 +22,9 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
-    private String lastName;
+    @Column(unique = true)
+    private String agencia;
+    @Column(unique = true)
     private String address;
     @Column(unique = true)
     private String document;
@@ -30,12 +33,12 @@ public class User {
     private String password;
     private BigDecimal balance;
     @Enumerated(EnumType.STRING)
-    private UserType userType;
+    private StatusType statusType;
 
     public String getEmail() {return email;}
 
-    public UserType getUserType() {
-        return userType;
+    public StatusType getStatusType() {
+        return statusType;
     }
 
     public BigDecimal getBalance() {
@@ -48,12 +51,12 @@ public class User {
 
     public User(UserDTO data){
         this.firstName = data.firstName();
-        this.lastName = data.lastName();
+        this.agencia = data.agencia();
         this.address = data.address();
         this.document = data.document();
         this.email = data.email();
         this.balance = data.balance();
-        this.userType = data.userType();
+        this.statusType = data.statusType();
         this.password = data.password();
     }
 
