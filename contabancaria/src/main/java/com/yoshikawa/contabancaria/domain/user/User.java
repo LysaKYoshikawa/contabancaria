@@ -25,11 +25,11 @@ public class User {
     @Column(unique = true)
     private String agency;
     private String account;
-    @Column(unique = true)
+
     private String address;
     @Column(unique = true)
     private String document;
-    @Column(unique = true)
+
     private String email;
     private String password;
     private BigDecimal balance;
