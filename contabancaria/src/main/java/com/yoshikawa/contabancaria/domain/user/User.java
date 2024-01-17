@@ -23,7 +23,8 @@ public class User {
     private Long id;
     private String firstName;
     @Column(unique = true)
-    private String agencia;
+    private String agency;
+    private String account;
     @Column(unique = true)
     private String address;
     @Column(unique = true)
@@ -51,7 +52,8 @@ public class User {
 
     public User(UserDTO data){
         this.firstName = data.firstName();
-        this.agencia = data.agencia();
+        this.agency = data.agency();
+        this.account = data.account();
         this.address = data.address();
         this.document = data.document();
         this.email = data.email();

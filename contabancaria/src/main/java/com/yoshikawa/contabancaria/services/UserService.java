@@ -27,8 +27,8 @@ public class UserService {
 
     }
 
-    public User findUserById(Long id) throws Exception {
-        return this.repository.findUserById(id).orElseThrow(() -> new Exception("Usuario não cadastrado"));
+    public User findUserByAgency(String agency ) throws Exception {
+        return this.repository.findUserByAgency(agency).orElseThrow(() -> new Exception("Conta não localizada"));
     }
 
     public User createUser(UserDTO data){

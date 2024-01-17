@@ -5,7 +5,8 @@ import com.yoshikawa.contabancaria.domain.user.StatusType;
 import java.math.BigDecimal;
 
 public record UserDTO(String firstName,
-                      String agencia,
+                      String agency,
+                      String account,
                       String address,
                       String document,
                       BigDecimal balance,

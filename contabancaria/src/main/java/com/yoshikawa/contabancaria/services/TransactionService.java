@@ -32,8 +32,9 @@ public class TransactionService {
     private NotificationService notificationService;
 
     public Transaction createTransaction(TransactionDTO transaction) throws Exception{
-        User sender = this.userService.findUserById(transaction.senderId());
-        User receiver = this.userService.findUserById(transaction.receiverId());
+        User sender = this.userService.findUserByAgency(transaction.senderAgency());
+
+        User receiver = this.userService.findUserByAgency(transaction.receiverAgency());
 
         userService.validadeTransaction(sender, transaction.value());
 

@@ -16,15 +16,14 @@ import java.time.LocalDateTime;
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
-
+    private String agency;
     private BigDecimal amount;
     @ManyToOne
-    @JoinColumn(name="sender_id")
+    @JoinColumn(name="sender_agency")
     private User sender;
     @ManyToOne
-    @JoinColumn(name="received_id")
+    @JoinColumn(name="received_agency")
     private User receiver;
 
     private LocalDateTime timestamp;
