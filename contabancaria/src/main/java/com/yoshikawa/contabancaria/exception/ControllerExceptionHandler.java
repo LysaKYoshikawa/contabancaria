@@ -1,4 +1,4 @@
-package com.yoshikawa.contabancaria.infra;
+package com.yoshikawa.contabancaria.exception;
 
 import com.yoshikawa.contabancaria.DTOs.ExceptionDTO;
 import com.yoshikawa.contabancaria.exception.AccountNotFoundException;
