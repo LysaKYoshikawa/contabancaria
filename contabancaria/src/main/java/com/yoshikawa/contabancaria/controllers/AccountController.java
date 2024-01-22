@@ -26,9 +26,4 @@ public class AccountController {
 
     }
 
-//    @GetMapping
-//    public ResponseEntity<List<User>> getListUsers(){
-//        List<User> users = this.userService.getListUsers();
-//        return new ResponseEntity<>(users, HttpStatus.OK);
-//    }
 }

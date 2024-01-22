@@ -40,27 +40,12 @@ public class User {
 
     public String getEmail() {return email;}
 
-//    public StatusType getStatusType() {
-//        return statusType;
-//    }
-//
-//    public BigDecimal getBalance() {
-//        return balance;
-//    }
-//
-//    public void setBalance(BigDecimal balance) {
-//        this.balance = balance;
-//    }
-
     public User(UserDTO data){
         this.firstName = data.firstName();
         this.agency = data.agency();
-//        this.account = data.account();
         this.address = data.address();
         this.document = data.document();
         this.email = data.email();
-//        this.balance = data.balance();
-//        this.statusType = data.statusType();
         this.password = data.password();
     }
 
