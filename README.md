@@ -192,3 +192,7 @@ Prepare o local para rodar o projeto
 ![image](https://github.com/LysaKYoshikawa/contabancaria/assets/64383080/89ce32d9-45e8-43c7-8770-46a87a1453ae)
 
 Execute o projeto e faça os testes de requisição. Indico Insomia ou Postman
+
+# :pushpin: Author
+Monalysa Klauck Yoshikawa
+[Linkedin] : <https://www.linkedin.com/in/monalysa-yoshikawa/>
