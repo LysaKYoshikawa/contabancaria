@@ -43,5 +43,6 @@ class UserRepositoryTest {
         User newUser = new User(data);
         this.entityManager.persist(newUser);
         return newUser;
+
     }
 }
