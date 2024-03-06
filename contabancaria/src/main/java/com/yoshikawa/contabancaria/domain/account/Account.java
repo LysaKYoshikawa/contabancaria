@@ -18,6 +18,7 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "account")
+
     private Long account;
     private String agency;
     private BigDecimal balance;
