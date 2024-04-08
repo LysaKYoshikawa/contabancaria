@@ -42,7 +42,7 @@ class UserRepositoryTest {
     @Test
     @DisplayName("Não deve obter o usuário do banco de dados quando o usuário não existe")
     void findUserByDocumentNotExist() {
-        String document = "123456";
+        String document = "1234567";
 
         Optional<User> result = this.userRepository.findUserByDocument(document);
 
