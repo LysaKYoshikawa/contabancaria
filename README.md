@@ -1,4 +1,4 @@
-Projeto de Sistema Bancario simplificado
+Projeto de API de Transferência Bancaria Simplificada
 
 #  :star: About the project
 
@@ -174,6 +174,7 @@ Seu response:
 - JPA
 - maven
 - Junit e Mockito
+
 
 
 ## Como executar o projeto
