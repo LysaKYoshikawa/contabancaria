@@ -35,6 +35,7 @@ class UserRepositoryTest {
 
         Optional<User> result = this.userRepository.findUserByDocument(document);
 
+        // esse assert consulta se o result é verdadeiro e se retorna os dados acima colocados
         assertThat(result.isPresent()).isTrue();
 
     }
@@ -42,14 +43,14 @@ class UserRepositoryTest {
     @Test
     @DisplayName("Não deve obter o usuário do banco de dados quando o usuário não existe")
     void findUserByDocumentNotExist() {
-        String document = "1234567";
+        String document = "123456";
 
         Optional<User> result = this.userRepository.findUserByDocument(document);
 
         assertThat(result.isEmpty()).isTrue();
 
     }
-
+// esse user abaixo ira criar um user temporario para teste
     private User createUser(UserDTO data){
         User newUser = new User(data);
         this.entityManager.persist(newUser);
