@@ -4,6 +4,7 @@ import com.yoshikawa.contabancaria.DTOs.TransactionDTO;
 import com.yoshikawa.contabancaria.domain.account.Account;
 import com.yoshikawa.contabancaria.domain.user.StatusType;
 import com.yoshikawa.contabancaria.repositories.TransactionsRepository;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -74,5 +75,22 @@ class TransactionServiceTest {
     @Test
     @DisplayName("Deve criar a Exception quando a trasação estiver permitida")
     void createTransactionCase2() {
+
+        Account sender = new Account(1L,"0102",new BigDecimal(100),"123456", StatusType.COMMON);
+        Account receiver = new Account(2L,"0123",new BigDecimal(50),"654321", StatusType.COMMON);
+
+        when(accountService.findAccount(1L)).thenReturn(sender);
+        when(accountService.findAccount(2L)).thenReturn(receiver);
+
+        when(authService.authorizeTransaction(any(),any())).thenReturn(false);
+
+        Exception thrown = Assertions.assertThrows(RuntimeException.class,() ->{
+            TransactionDTO request = new TransactionDTO(new BigDecimal(10),1L,2L);
+            transactionService.createTransaction(request);
+        });
+
+        Assertions.assertEquals("Transferência não autorizada", thrown.getMessage());
+
+
     }
 }
