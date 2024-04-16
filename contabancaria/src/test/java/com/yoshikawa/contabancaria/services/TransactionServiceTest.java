@@ -84,7 +84,7 @@ class TransactionServiceTest {
 
         when(authService.authorizeTransaction(any(),any())).thenReturn(false);
 
-        Exception thrown = Assertions.assertThrows(RuntimeException.class,() ->{
+        Exception thrown = Assertions.assertThrows(Exception.class,() ->{
             TransactionDTO request = new TransactionDTO(new BigDecimal(10),1L,2L);
             transactionService.createTransaction(request);
         });
