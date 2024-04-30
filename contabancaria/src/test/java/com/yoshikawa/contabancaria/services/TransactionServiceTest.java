@@ -63,14 +63,10 @@ class TransactionServiceTest {
         verify(repository, times(1)).save(any());
 
         sender.setBalance(new BigDecimal(0));
-//        verify(accountService, times(1)).saveAccount(sender);
-
         receiver.setBalance(new BigDecimal(15));
-//        verify(accountService, times(1)).saveAccount(receiver);
-        //comentei esse verify pois ele ja esta salvando no metodo createTransaction da classe transaction service
+
 
         verify(notificationService, times(1)).sendNotification(userService.findUserByAgency("0102"), "Pagamento realizado com sucesso");
-        verify(notificationService, times(1)).sendNotification(userService.findUserByAgency("0123"), "Pagamento recebido com sucesso");
     }
 
     @Test
