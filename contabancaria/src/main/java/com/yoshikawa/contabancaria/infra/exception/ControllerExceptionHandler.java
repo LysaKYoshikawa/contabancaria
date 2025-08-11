@@ -1,9 +1,7 @@
-package com.yoshikawa.contabancaria.exception;
+package com.yoshikawa.contabancaria.infra.exception;
 
-import com.yoshikawa.contabancaria.DTOs.ExceptionDTO;
-import com.yoshikawa.contabancaria.exception.AccountNotFoundException;
+import com.yoshikawa.contabancaria.app.DTOs.ExceptionDTO;
 import jakarta.persistence.EntityNotFoundException;
-import org.hibernate.proxy.EntityNotFoundDelegate;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

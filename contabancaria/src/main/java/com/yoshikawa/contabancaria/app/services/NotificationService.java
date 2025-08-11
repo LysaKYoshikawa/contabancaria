@@ -1,6 +1,6 @@
-package com.yoshikawa.contabancaria.services;
+package com.yoshikawa.contabancaria.app.services;
 
-import com.yoshikawa.contabancaria.DTOs.NotificationDTO;
+import com.yoshikawa.contabancaria.app.DTOs.NotificationDTO;
 import com.yoshikawa.contabancaria.domain.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

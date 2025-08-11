@@ -1,4 +1,4 @@
-package com.yoshikawa.contabancaria.DTOs;
+package com.yoshikawa.contabancaria.app.DTOs;
 
 import java.math.BigDecimal;
 

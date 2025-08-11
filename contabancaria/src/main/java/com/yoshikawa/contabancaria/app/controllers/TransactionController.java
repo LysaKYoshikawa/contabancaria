@@ -1,8 +1,8 @@
-package com.yoshikawa.contabancaria.controllers;
+package com.yoshikawa.contabancaria.app.controllers;
 
-import com.yoshikawa.contabancaria.DTOs.TransactionDTO;
+import com.yoshikawa.contabancaria.app.DTOs.TransactionDTO;
 import com.yoshikawa.contabancaria.domain.transaction.Transaction;
-import com.yoshikawa.contabancaria.services.TransactionService;
+import com.yoshikawa.contabancaria.app.services.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

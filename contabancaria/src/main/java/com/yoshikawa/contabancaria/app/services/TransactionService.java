@@ -1,11 +1,11 @@
-package com.yoshikawa.contabancaria.services;
+package com.yoshikawa.contabancaria.app.services;
 
-import com.yoshikawa.contabancaria.DTOs.TransactionDTO;
+import com.yoshikawa.contabancaria.app.DTOs.TransactionDTO;
 import com.yoshikawa.contabancaria.domain.account.Account;
 import com.yoshikawa.contabancaria.domain.transaction.Transaction;
 import com.yoshikawa.contabancaria.domain.user.StatusType;
 import com.yoshikawa.contabancaria.domain.user.User;
-import com.yoshikawa.contabancaria.repositories.TransactionsRepository;
+import com.yoshikawa.contabancaria.domain.repositories.TransactionsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;

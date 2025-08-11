@@ -1,4 +1,4 @@
-package com.yoshikawa.contabancaria.repositories;
+package com.yoshikawa.contabancaria.domain.repositories;
 
 import com.yoshikawa.contabancaria.domain.account.Account;
 

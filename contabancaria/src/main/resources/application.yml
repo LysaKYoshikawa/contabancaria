@@ -1,0 +1,21 @@
+server:
+  port: 8080 # Porta do servidor
+
+spring:
+  application:
+    name: contabancaria # Nome da aplicação
+  main:
+    allow-bean-definition-overriding: true # Permite sobrescrever definições de beans
+  jackson:
+    serialization:
+      indent-output: true # Formata a saída JSON
+
+logging:
+  level:
+    root: info # Nível de log padrão
+    com.yoshikawa.contabancaria: debug # Nível de log para o pacote da aplicação
+
+rest:
+  template:
+    connect-timeout: 5000 # Timeout de conexão em milissegundos
+    read-timeout: 5000 # Timeout de leitura em milissegundos

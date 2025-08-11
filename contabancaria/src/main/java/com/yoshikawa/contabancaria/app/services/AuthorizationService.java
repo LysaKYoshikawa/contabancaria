@@ -1,4 +1,4 @@
-package com.yoshikawa.contabancaria.services;
+package com.yoshikawa.contabancaria.app.services;
 
 import com.yoshikawa.contabancaria.domain.account.Account;
 import org.springframework.beans.factory.annotation.Autowired;

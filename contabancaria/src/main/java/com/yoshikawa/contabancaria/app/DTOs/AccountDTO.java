@@ -1,4 +1,4 @@
-package com.yoshikawa.contabancaria.DTOs;
+package com.yoshikawa.contabancaria.app.DTOs;
 
 import com.yoshikawa.contabancaria.domain.user.StatusType;
 

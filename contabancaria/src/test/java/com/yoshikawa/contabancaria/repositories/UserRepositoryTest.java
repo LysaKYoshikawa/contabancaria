@@ -1,6 +1,7 @@
 package com.yoshikawa.contabancaria.repositories;
 
-import com.yoshikawa.contabancaria.DTOs.UserDTO;
+import com.yoshikawa.contabancaria.app.DTOs.UserDTO;
+import com.yoshikawa.contabancaria.domain.repositories.UserRepository;
 import com.yoshikawa.contabancaria.domain.user.StatusType;
 import com.yoshikawa.contabancaria.domain.user.User;
 import jakarta.persistence.EntityManager;
@@ -14,7 +15,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.math.BigDecimal;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
 @DataJpaTest
 @ActiveProfiles("test")
 class UserRepositoryTest {

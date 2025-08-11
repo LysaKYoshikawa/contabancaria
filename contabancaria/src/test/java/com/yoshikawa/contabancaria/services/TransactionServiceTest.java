@@ -1,9 +1,10 @@
 package com.yoshikawa.contabancaria.services;
 
-import com.yoshikawa.contabancaria.DTOs.TransactionDTO;
+import com.yoshikawa.contabancaria.app.DTOs.TransactionDTO;
+import com.yoshikawa.contabancaria.app.services.*;
 import com.yoshikawa.contabancaria.domain.account.Account;
 import com.yoshikawa.contabancaria.domain.user.StatusType;
-import com.yoshikawa.contabancaria.repositories.TransactionsRepository;
+import com.yoshikawa.contabancaria.domain.repositories.TransactionsRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -12,21 +13,19 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 class TransactionServiceTest {
 
     @Mock
-    private  UserService userService;
+    private UserService userService;
 
     @Mock
-    private  AccountService accountService;
+    private AccountService accountService;
 
     @Mock
     private TransactionsRepository repository;

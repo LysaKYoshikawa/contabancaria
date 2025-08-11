@@ -1,10 +1,10 @@
-package com.yoshikawa.contabancaria.services;
+package com.yoshikawa.contabancaria.app.services;
 
-import com.yoshikawa.contabancaria.DTOs.AccountDTO;
+import com.yoshikawa.contabancaria.app.DTOs.AccountDTO;
 import com.yoshikawa.contabancaria.domain.account.Account;
 import com.yoshikawa.contabancaria.domain.user.User;
-import com.yoshikawa.contabancaria.exception.AccountNotFoundException;
-import com.yoshikawa.contabancaria.repositories.AccountRepository;
+import com.yoshikawa.contabancaria.infra.exception.AccountNotFoundException;
+import com.yoshikawa.contabancaria.domain.repositories.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

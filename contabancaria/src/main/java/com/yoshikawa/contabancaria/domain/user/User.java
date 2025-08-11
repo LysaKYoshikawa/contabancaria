@@ -1,13 +1,11 @@
 package com.yoshikawa.contabancaria.domain.user;
 
 
-import com.yoshikawa.contabancaria.DTOs.UserDTO;
+import com.yoshikawa.contabancaria.app.DTOs.UserDTO;
 import com.yoshikawa.contabancaria.domain.account.Account;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.usertype.UserType;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @Entity(name="users")
