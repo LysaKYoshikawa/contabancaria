@@ -6,7 +6,6 @@ import java.math.BigDecimal;
 
 public record AccountDTO(String document,
                          String agency,
-
                          BigDecimal balance,
                          StatusType statusType) {
 }
