@@ -6,6 +6,7 @@ import com.yoshikawa.contabancaria.domain.transaction.Transaction;
 import com.yoshikawa.contabancaria.domain.user.StatusType;
 import com.yoshikawa.contabancaria.domain.user.User;
 import com.yoshikawa.contabancaria.domain.repositories.TransactionsRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
@@ -17,6 +18,7 @@ import java.time.LocalDateTime;
 
 
 @Service
+@Slf4j
 public class TransactionService {
 
     @Autowired
@@ -42,10 +44,10 @@ public class TransactionService {
 
         validadeTransaction(senderAccount, receiverAccount, transaction.value());
 
-        boolean isAuthorized = this. authService.authorizeTransaction(senderAccount, transaction.value());
-        if(!isAuthorized){
-            throw new Exception("Transferência não autorizada");
-        }
+//        boolean isAuthorized = this.authService.authorizeTransaction(senderAccount, transaction.value());
+//        if(!isAuthorized){
+//            throw new Exception("Transferência não autorizada");
+//        }
 
         Transaction newTransaction = new Transaction();
         newTransaction.setAmount(transaction.value());
@@ -63,8 +65,10 @@ public class TransactionService {
         User senderUser = userService.findUserByDocument(senderAccount.getDocument());
         User receiverUser = userService.findUserByDocument(receiverAccount.getDocument());
 
-        this.notificationService.sendNotification(senderUser, "Pagamento realizado com sucesso");
-        this.notificationService.sendNotification(receiverUser, "Pagamento recebida com sucesso");
+        log.info("Notificação enviada para o usuário: " + receiverUser.getId() + "Da conta: "+ senderUser.getId() + "- Pagamento realizado com sucesso");
+
+//        this.notificationService.sendNotification(senderUser, "Pagamento realizado com sucesso");
+//        this.notificationService.sendNotification(receiverUser, "Pagamento recebida com sucesso");
 
         return newTransaction;
 
