@@ -5,22 +5,19 @@ import com.yoshikawa.contabancaria.app.DTOs.UserDTO;
 import com.yoshikawa.contabancaria.domain.account.Account;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.io.Serializable;
 import java.util.List;
 
-@Entity(name="users")
-@Table(name="users")
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@EqualsAndHashCode(of="id")
 
-public class User {
+@Document(collection = "user")
+public class User implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
     private String firstName;
     @Column(unique = true)
     private String agency;
@@ -47,7 +44,7 @@ public class User {
         this.password = data.password();
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

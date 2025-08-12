@@ -65,7 +65,7 @@ public class TransactionService {
         User senderUser = userService.findUserByDocument(senderAccount.getDocument());
         User receiverUser = userService.findUserByDocument(receiverAccount.getDocument());
 
-        log.info("Notificação enviada para o usuário: " + receiverUser.getId() + "Da conta: "+ senderUser.getId() + "- Pagamento realizado com sucesso");
+        log.info("Notificação enviada para o usuário: " + receiverUser.getAccounts() + "Da conta: "+ senderUser.getAccounts() + "- Pagamento realizado com sucesso");
 
 //        this.notificationService.sendNotification(senderUser, "Pagamento realizado com sucesso");
 //        this.notificationService.sendNotification(receiverUser, "Pagamento recebida com sucesso");
